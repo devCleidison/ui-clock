@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+:root{
+  --font: 'Poppins', sans-serif;
+  --font-regular: 400;
+  --font-medium: 500;
+
+  --primary-color: #14213D;
+  --second-color: #E5E5E5;
+  --black: #000;
+  --white: #FFF;
+  --orange: #FCA311;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: var(--font);
+  background-color: var(--second-color);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+a{
+  text-decoration: none;
+}
+
+.container{
+  height: 80%;
+  width: 300px;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  background-color: var(--white);
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: 500ms;
+}
+
+.clock__content{
+  display: flex;
+  height: 60%;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.theme{
+  border: none;
+  position: absolute;
+  top: 40%;
+  background-color: transparent;
+  border-radius: 50%;
+}
+#theme__img{
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.clock{
+  font-size: 3rem;
+  font-weight: var(--font-medium);
+  color: var(--primary-color);
+}
+
+.date__container{
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.day,
+.month,
+.year{
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.link{
+  cursor: pointer;
+  font-size: .85rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+.link:hover{
+  color: hsl(var(--primary-color), 51%, 12%)
+}
+
+.dark{
+  background-color: var(--primary-color);
+  transition: 500ms;
+}
+.dark #theme__img{
+  color: var(--white);
+}
+
+.dark .clock{
+  color: var(--white);
+}
+
+.dark .day,
+.dark .month,
+.dark .year{
+  color: var(--white);
+}
+
+.dark .link{
+  color: var(--white);
+}
+
+.dark .link:hover{
+  color: var(--second-color)
+}
+
+@media screen and (min-width: 1024px){
+  .container{
+    width: 400px;
+  }
+}
